@@ -24,7 +24,7 @@ from absl.testing import absltest
 import six
 from six.moves import range
 import tensorflow.compat.v2 as tf
-from tf.compat.v1.data import get_output_shapes
+from tensorflow.compat.v1.data import get_output_shapes
 
 from uq_benchmark_2019.criteo import data_lib
 
