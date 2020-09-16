@@ -89,7 +89,7 @@ def _build_lenet(opts):
   net = keras.layers.Flatten()(net)
   net = dense_layer(128, activation='relu')(net)
   net = dropout_fn_last(net)
-  logits = dense_last(_NUM_CLASSES)(net)
+  logits = dense_last(_NUM_CLASSES, activation='relu')(net)
   return keras.Model(inputs=inputs, outputs=logits)
 
 

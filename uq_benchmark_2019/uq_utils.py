@@ -86,7 +86,7 @@ def get_layer_builders(method, dropout_rate, num_train_examples):
   # Only DenseVariational works in v2 / eager mode.
   # FMI: https://github.com/tensorflow/probability/issues/409
   if tf.executing_eagerly():
-    def dense_variational(units, activation):
+    def dense_variational(units, activation=tf.nn.relu):
       return tfpl.DenseVariational(
           units,
           make_posterior_fn=_posterior_mean_field,
