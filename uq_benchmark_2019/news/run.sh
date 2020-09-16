@@ -28,10 +28,10 @@
 
 #!/bin/bash
 
-virtualenv -p python3 .
-source ./bin/activate
+# virtualenv -p python3 .
+# source ./bin/activate
 
-pip install -r uq_benchmark_2019/requirements.txt
+# pip install -r uq_benchmark_2019/requirements.txt
 
 
 # to test the script using a toy dataset
