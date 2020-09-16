@@ -24,6 +24,7 @@ from absl.testing import absltest
 import six
 from six.moves import range
 import tensorflow.compat.v2 as tf
+from tf.compat.v1.data import get_output_shapes
 
 from uq_benchmark_2019.criteo import data_lib
 
@@ -36,7 +37,7 @@ class DataLibTest(absltest.TestCase):
                                      is_training=False, fake_training=False)
 
     # Check output_shapes.
-    features_shapes, label_shape = dataset.output_shapes
+    features_shapes, label_shape = get_output_shapes(dataset)
     self.assertEqual([None], label_shape.as_list())
     expected_keys = [data_lib.feature_name(i)
                      for i in range(1, data_lib.NUM_TOTAL_FEATURES+1)]
